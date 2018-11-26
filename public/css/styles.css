@@ -36,6 +36,13 @@ a {
 .text {
   font-family: 'Montserrat', sans-serif;
   margin: .8em 0; }
+  @media only screen and (min-width: 600px) {
+    .text {
+      font-size: 1.2em;
+      margin: 0 1em 1em 0; } }
+  @media only screen and (min-width: 1200px) {
+    .text {
+      font-size: 1.5em; } }
 
 .content {
   display: flex;
@@ -53,10 +60,12 @@ a {
     background-color: #fff;
     color: #333; }
 
-@media only screen and (min-width: 600px) {
-  .section__img {
-    margin: 5em;
-    max-width: 25%; } }
+.section__img {
+  margin: 2em; }
+  @media only screen and (min-width: 600px) {
+    .section__img {
+      margin: 2em;
+      max-width: 25%; } }
 
 .class__section {
   display: flex;

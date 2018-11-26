@@ -1,16 +1,23 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700");
 body {
   background-color: #00a99d;
-  margin: 2em;
   color: #fff;
+  margin: 2em;
   overflow-y: hidden; }
 
 a {
   outline: none;
   text-decoration: none; }
 
+.row {
+  display: block; }
+  @media only screen and (min-width: 600px) {
+    .row {
+      display: flex; } }
+
 .container {
-  margin: 40% auto; }
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100); }
 
 .title {
   color: #333333;
@@ -19,6 +26,9 @@ a {
   font-weight: 700;
   margin: 0;
   font-size: 1.5em; }
+  @media only screen and (min-width: 600px) {
+    .title {
+      font-size: 2.5em; } }
 
 .highlight {
   color: #333; }
@@ -26,6 +36,11 @@ a {
 .text {
   font-family: 'Montserrat', sans-serif;
   margin: .8em 0; }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
 
 .btn {
   padding: .5em 2em;
@@ -38,13 +53,20 @@ a {
     background-color: #fff;
     color: #333; }
 
-.section__img {
-  margin: 0em 4em 1em 4em; }
+@media only screen and (min-width: 600px) {
+  .section__img {
+    margin: 5em;
+    max-width: 25%; } }
 
 .class__section {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; }
+  align-items: flex-start;
+  justify-content: center; }
+  @media only screen and (min-width: 600px) {
+    .class__section {
+      flex-direction: row;
+      align-items: center; } }
 
 .form__input {
   width: 100%;

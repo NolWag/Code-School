@@ -10,3 +10,4 @@ Todo
 2. Portal for users to submit: name & email
 3. Create landing pages
 4. Finish student account section
+5. Add send grid for messaging ^

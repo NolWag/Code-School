@@ -21,13 +21,25 @@ router.use(function(req, res, next) {
 });
 
 router.get("/", function(req, res, next) {
-  User.find()
-  .sort({ createdAt: "descending" })
-  .exec(function(err, users) {
-    if (err) { return next(err); }
-    res.render("index", { users: users });
-  });
+  res.render("index");
+
 });
+
+router.post("/send-message", function(req, res) {
+  var content = req.body.location + " " + req.body.email;
+  // using SendGrid's v3 Node.js Library
+  // https://github.com/sendgrid/sendgrid-nodejs
+  const sgMail = require('@sendgrid/mail');
+  sgMail.setApiKey('');
+  const msg = {
+    to: 'nolandubyu@gmail.com',
+    from: 'nolandubyu@gmail.com',
+    subject: req.body.name,
+    text: content,
+  };
+  sgMail.send(msg);
+  res.redirect('/');
+})
 
 router.get("/login", function(req, res) {
   res.render("login");
